@@ -26,7 +26,7 @@ class MainViewController: UIViewController, YMKMapInputListener, YMKLayersGeoObj
         super.viewDidLoad()
         
         circleAvatar(avatarIV, true)
-        bottomView.isHidden = true
+        hideBottomView()
         
         addPlacemarkOnMap(LOCATION_2)
         addPlacemarkOnMap(LOCATION_3)
@@ -49,9 +49,7 @@ class MainViewController: UIViewController, YMKMapInputListener, YMKLayersGeoObj
             NSLog(TAG + "onMapObjectTap: error")
             return false
         }
-        dateLabel.text = getData()
-        timeLabel.text = getTime()
-        bottomView.isHidden = false
+        showBottomView()
         self.focusOnPlacemark(placemark)
         NSLog(TAG + "onMapObjectTap: success")
         return true
@@ -113,6 +111,7 @@ class MainViewController: UIViewController, YMKMapInputListener, YMKLayersGeoObj
             NSLog(TAG + "myLocationButtonClicked: userLocationLayer.isVisible = true")
             userLocationLayer.setVisibleWithOn(false)
             locationButton.setImage(UIImage(named: "ic_mylocation"), for: .normal)
+            hideBottomView()
         } else {
             NSLog(TAG + "myLocationButtonClicked: userLocationLayer.isVisible = true")
             let scale = UIScreen.main.scale
@@ -125,6 +124,7 @@ class MainViewController: UIViewController, YMKMapInputListener, YMKLayersGeoObj
             )
             userLocationLayer.setObjectListenerWith(self)
             locationButton.setImage(UIImage(named: "ic_my_tracker"), for: .normal)
+            showBottomView()
         }
         NSLog(TAG + "myLocationButtonClicked: exit")
     }
@@ -317,11 +317,22 @@ class MainViewController: UIViewController, YMKMapInputListener, YMKLayersGeoObj
     func onMapTap(with map: YMKMap, point: YMKPoint) {
         NSLog(TAG + "onMapTap: entrance")
         mapView.mapWindow.map.deselectGeoObject()
-        bottomView.isHidden = true
+        hideBottomView()
     }
         
     func onMapLongTap(with map: YMKMap, point: YMKPoint) {}
     
+    // MARK: показать нижнее окно
+    func showBottomView(){
+        dateLabel.text = getData()
+        timeLabel.text = getTime()
+        bottomView.isHidden = false
+    }
+    
+    // MARK: скрыть нижнее окно
+    func hideBottomView(){
+        bottomView.isHidden = true
+    }
 }
 
 
