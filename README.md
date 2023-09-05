@@ -1,6 +1,6 @@
 # MapsBinomTech
 
-Использовано: Xcode, Storyboard; Swift, Pods, YandexMapsMobile.
+Использовано: Xcode, Storyboard, Swift, Pods, YandexMapsMobile.
 
 Тестовое задание:
 
@@ -9,7 +9,8 @@
 3. Должна быть поддержка масштабирования и текущего позиционирования по кнопке;
 4. Нужно разместить несколько маркеров по любым координатам;
 5. При клике на маркер всплывающее окно снизу экрана.
-6. Скриншоты результата:
+
+# Скриншоты результата:
 
 ![3 markers](https://github.com/YaslikS/MapsBinomTech/assets/58375980/4d756aef-0f45-4591-8d21-bbf2687f68af)
 ![3 markers Big](https://github.com/YaslikS/MapsBinomTech/assets/58375980/74e34838-2046-4a04-b227-59b685c79c1e)
