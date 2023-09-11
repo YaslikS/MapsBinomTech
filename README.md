@@ -1,4 +1,4 @@
-# MapsBinomTech
+# MapsYandexApi
 
 Использовано: Xcode, Storyboard, Swift, Pods, YandexMapsMobile.
 
